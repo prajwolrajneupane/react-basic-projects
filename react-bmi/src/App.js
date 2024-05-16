@@ -14,20 +14,20 @@ function App() {
     //prevent submitting to the server
     event.preventDefault()
  
-    if (weight === 0 || height === 0) {
+    if (weight === 0 || height === 0 || weight<height) {
       alert('Please enter a valid weight and height')
-    } else {
+    } else if(weight>height) {
       let bmi = (weight / (height * height) * 703)
       setBmi(bmi.toFixed(1))
  
       // Logic for message
  
       if (bmi < 25) {
-        setMessage('You are underweight')
+        setMessage('Khaney gar vai')
       } else if (bmi >= 25 && bmi < 30) {
-        setMessage('You are a healthy weight')
+        setMessage('Thik xa')
       } else {
-        setMessage('You are overweight')
+        setMessage('Motey🫵🤣')
       }
     }
   }
